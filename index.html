@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>The Wildfire Digital</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        canvas {
+            background: #1a1919;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            /* font-size: 200px; */
+            font-size: 8vw;
+            color: #ffffff;
+        }
+        .content {
+            position:absolute; /*it can be fixed too*/
+            left:0; right:0;
+            top:0; bottom:0;
+            margin:auto;
+            z-index: 1;
+
+            /*this to solve "the content will not be cut when the window is smaller than the content": */
+            max-width:100%;
+            max-height:100%;
+            overflow:auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas style="position: absolute" id="canvas"></canvas>
+    <div class="content">
+        <img style="height: 9vw;" src="./triangle.png"/>
+        <h1><span style="color: #a02424">Coming </span>Soon...</h1>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+        var canvas = document.getElementById("canvas"),
+            ctx = canvas.getContext('2d');
+
+        canvas.top = 0;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        console.log(canvas.width, canvas.height)
+
+        var stars = [], // Array that contains the stars
+            FPS = 60, // Frames per second
+            x = 100, // Number of stars
+            mouse = {
+            x: 0,
+            y: 0
+            };  // mouse location
+        
+        if (canvas.width > 2000) {
+            x = x*2
+        } else if (canvas.width < 500) {
+            x = x/2
+        }
+        console.log(x)
+
+        // Push stars to array
+
+        for (var i = 0; i < x; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 1 + 1,
+            vx: Math.floor(Math.random() * 50) - 25,
+            vy: Math.floor(Math.random() * 50) - 25
+        });
+        }
+
+        // Draw the scene
+
+        function draw() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        
+        ctx.globalCompositeOperation = "lighter";
+        
+        for (var i = 0, x = stars.length; i < x; i++) {
+            var s = stars[i];
+        
+            ctx.fillStyle = "#fff";
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.fillStyle = 'black';
+            ctx.stroke();
+        }
+        
+        ctx.beginPath();
+        for (var i = 0, x = stars.length; i < x; i++) {
+            var starI = stars[i];
+            ctx.moveTo(starI.x,starI.y); 
+            if(distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
+            for (var j = 0, x = stars.length; j < x; j++) {
+            var starII = stars[j];
+            if(distance(starI, starII) < 150) {
+                //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
+                ctx.lineTo(starII.x,starII.y); 
+            }
+            }
+        }
+        ctx.lineWidth = 0.05;
+        ctx.strokeStyle = 'white';
+        ctx.stroke();
+        }
+
+        function distance( point1, point2 ){
+        var xs = 0;
+        var ys = 0;
+        
+        xs = point2.x - point1.x;
+        xs = xs * xs;
+        
+        ys = point2.y - point1.y;
+        ys = ys * ys;
+        
+        return Math.sqrt( xs + ys );
+        }
+
+        // Update star locations
+        function update() {
+        for (var i = 0, x = stars.length; i < x; i++) {
+            var s = stars[i];
+        
+            s.x += s.vx / FPS;
+            s.y += s.vy / FPS;
+            
+            if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
+            if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
+        }
+        }
+
+        canvas.addEventListener('mousemove', function(e){
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        });
+
+        // Update and draw
+        function tick() {
+        draw();
+        update();
+        requestAnimationFrame(tick);
+        }
+
+        tick();
+    </script>
+</body>
+</html>
+
