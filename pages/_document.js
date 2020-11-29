@@ -8,6 +8,9 @@ class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta charSet="utf-8" />
+          <title>The Wildfire Digital</title>
+          <meta property="og:type" content="website"/>
+          <meta name="description" content="Creative content and research driven branding solutions"/>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
