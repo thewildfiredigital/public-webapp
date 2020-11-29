@@ -7,3 +7,5 @@
 node_modules/
 # Logs
 npm-debug.log*
+package-lock.json
+editor-config.code-workspace
