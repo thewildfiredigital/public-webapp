@@ -91,7 +91,7 @@ export default function About(props) {
             {/* Hero */}
             <Hero 
                 title="ABOUT US" 
-                subtitle="Hi! we are Gargi &amp; Gaurav. With a mutual mantra of “Quality over Quantity” and a crazy
+                subtitle="Hi! we are Gargi &amp; Gaurav. With a mutual belief in “Quality over Quantity” and a crazy
                 obsession for Digital Business Growth, this husband-wife duo partnered to form
                  - The Wildfire Digital"
             />
@@ -149,9 +149,9 @@ export default function About(props) {
                                 </GridItem>
                                 <GridItem xs={12} sm={10} md={6}>
                                     <div className={classes.typo}>
-                                        <h3 className={classes.subsectionTitle}>handcrafted engaging content</h3>
+                                        <h3 className={classes.subsectionTitle}>Handcrafted engaging content</h3>
                                         <h3>
-                                            from facebook campaigns to social media posts - blogs to website pages,
+                                            From facebook campaigns to social media posts - blogs to website pages,
                                             everything we create for our clients is fresh, vibrant and
                                             personalised.
                                         </h3>
@@ -180,8 +180,8 @@ export default function About(props) {
                                 </GridItem>
                                 <GridItem xs={12} sm={10} md={6}>
                                     <div className={classes.typo}>
-                                        <h3 className={classes.subsectionTitle}>efficient, effective postitioning</h3>
-                                        <h3>our dedicated team works hard to take the least of your time while
+                                        <h3 className={classes.subsectionTitle}>Efficient, effective postitioning</h3>
+                                        <h3>Our dedicated team works hard to take the least of your time while
                                             delivering quality-driven, customised content for your business.
                                             Partner with us to give your business’s digital presence a facelift!</h3>
                                     </div>
