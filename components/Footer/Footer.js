@@ -177,9 +177,9 @@ export default function Footer(props) {
             className={aClasses}
             target="_blank"
           >
-            The Wildfire Digital
+            The Wildfire Digital.
           </a>
-          {" "} Pvt. Ltd. All rights reserved.
+          {" "} All rights reserved.
         </div>
       </div>
     </footer>
