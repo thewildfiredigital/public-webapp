@@ -7,7 +7,8 @@ import { roseColor, primaryColor, dangerColor } from 'assets/jss/nextjs-material
 
 const styles = {
     home: {
-        background: "#1c1c1e",
+        // background: "#1c1c1e",
+        background: "#191919",
         width: "100%",
         // marginTop: 70,
         paddingTop: 90,
@@ -48,7 +49,7 @@ export default function Hero(props) {
                     </GridItem>
                     <GridItem xs={12} sm={12} md={12}>
                         <div className={classes.typo}>
-                            <h4 className={classes.title} style={{color: roseColor}}>
+                            <h4 className={classes.title} style={{color: primaryColor}}>
                                 {props.title}
                             </h4>
                         </div>

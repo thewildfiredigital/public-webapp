@@ -14,6 +14,8 @@ import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import ContactFlex from 'components/ContactFlex';
 import Hero from 'components/Hero';
+import SnackbarContent from "components/Snackbar/SnackbarContent.js";
+import Check from "@material-ui/icons/Check";
 
 
 // Style
@@ -91,9 +93,7 @@ export default function About(props) {
             {/* Hero */}
             <Hero 
                 title="ABOUT US" 
-                subtitle="Hi! we are Gargi &amp; Gaurav. With a mutual belief in “Quality over Quantity” and a crazy
-                obsession for Digital Business Growth, this husband-wife duo partnered to form
-                 - The Wildfire Digital"
+                subtitle="Competitive Research, Creative Content Creation, Timely Execution and Constant Monitoring - Our mantra for steadily growing your business because we love seeing our clients prosper."
             />
 
             {/* About Us */}
@@ -103,25 +103,28 @@ export default function About(props) {
 
                         {/* Our Values */}
                         <div className={classes.section}>
+                            {/* <SnackbarContent
+                                message={
+                                    <span><b>This</b></span>
+                                } color="success" icon={Check}
+                            />*/}
                             <GridContainer 
                                 justify="center" 
                                 direction="row-reverse" 
                                 spacing={10}  
                                 alignItems="center" 
                                 style={{minHeight: '40vh', width: '100%'}}>
-                                <GridItem xs={10} sm={10} md={6} lg={6}>
+                                <GridItem xs={10} sm={10} md={8} lg={8}>
                                     <div className={classes.contentItem}>
                                         <div className={classes.typo} style={{textAlign: 'center'}}>
-                                            <img 
+                                            {/* <img 
                                                 src={'https://www.foremostmedia.com/portals/0/Images/services/online-marketing/social-media-marketing/social-media.png'}
                                                 className={classes.image}
-                                            />
+                                            /> */}
                                             <h3>
-                                                <span style={{color: roseColor}}>Competitive Research</span>, 
-                                                <span style={{color: roseColor}}> Creative Content Creation</span>, 
-                                                <span style={{color: roseColor}}> Timely Execution</span> &amp;
-                                                <span style={{color: roseColor}}> Constant Monitoring </span> 
-                                                - Our mantra for steadily growing your business because we love seeing our clients prosper.
+                                                {/* <span style={{color: roseColor}}></span> */}
+                                                Hi! we are <b>Gargi</b> &amp; <b>Gaurav</b>. With a mutual belief in “Quality over Quantity” and a crazy
+                                                obsession for Digital Business Growth, this husband-wife duo partnered to form - <b>The Wildfire Digital</b>
                                             </h3>
                                         </div>
                                     </div>

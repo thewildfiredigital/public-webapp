@@ -41,7 +41,7 @@ const styles = {
         color: '#f2f2f2'
     },
     background: {
-        backgroundColor: '#1c1c1e',
+        backgroundColor: '#191919',
         marginTop: '-10px',
         height: '200px',
         width: '100%',
@@ -118,7 +118,7 @@ export default function Contact (props) {
 
             {/* Hero */}
             <Hero 
-                title="Contact" 
+                title="CONTACT" 
                 subtitle="Get in touch, we’d love to hear from you!"
             >
                 {/* Contact Submission Notification */}

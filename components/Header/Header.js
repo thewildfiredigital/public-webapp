@@ -17,7 +17,7 @@ import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "assets/jss/nextjs-material-kit/components/headerStyle.js";
 // import BrandLogo from "assets/img/logo/logo_transparent.png";
-import BrandLogo from "assets/img/twd_2.png";
+import BrandLogo from "assets/img/twd_3.png";
 
 const useStyles = makeStyles(styles);
 
@@ -64,16 +64,15 @@ export default function Header(props) {
     [classes.fixed]: fixed
   });
   const brandComponent = (
-    <Link href="/" as="/">
-        <Button className={classes.title} style={{margin: '0px'}}>
+    <Link href="/" as="/" style={{margin: '0 0 0 0 '}}>
+        <Button className={classes.title} style={{margin: '0 0 0 0'}}>
           <img 
             src={BrandLogo} 
             style={
-              {height: '70px', width: '80px', color: 'black', 
-              marginTop: '-40px', marginBottom: '-35px'}}
+              {height: '50px', width: '90px', color: 'black', 
+              }} 
+              // marginTop: '-40px', marginBottom: '-35px'
           />
-          {/* {' '} {brand} */}
-
         </Button>
     </Link>
   );

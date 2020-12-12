@@ -99,7 +99,6 @@ export default function LandingPage(props) {
           {...rest}
         />
 
-
         {/* Hero */}
         <Parallax filter responsive image={require("assets/img/landing-bg.jpg")}>
           <div className={classes.container}>
@@ -192,7 +191,9 @@ export default function LandingPage(props) {
                       {/* Content - 1 */}
                       <div className={classes.section}>
                           <GridContainer justify="center" direction="row" spacing={10} alignItems="center">
-                            <GridItem xs={12} sm={10} md={7}>
+                            <GridItem xs={12} sm={10} md={7} justify="center"
+                            alignItems="center"
+                            align="center">
                               <img
                                 style={{width: "80%", display: "block"}}
                                 className={classes.imgCardTop}
@@ -222,7 +223,7 @@ export default function LandingPage(props) {
                             <GridItem xs={12} sm={10} md={5}>
                               <h2>Create a Brand they remember</h2>
                               {/* <h2>Create a Brand that you customers remember</h2> */}
-                              <h5>Branded content that tells your brand's story in a way that unifies your product/service 
+                              <h5>Branded content that tells your brand's story in a way that unifies your product or service 
                                 with your online presence. Get personalized brand strategy, illustrations and more for your business!</h5>
                             </GridItem>
                           </GridContainer>

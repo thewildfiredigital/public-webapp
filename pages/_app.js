@@ -44,12 +44,10 @@ Router.events.on("routeChangeError", () => {
 });
 
 
-// 
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core';
 
 const baseTheme = createMuiTheme();
-// /
 
 export default class MyApp extends App {
   componentDidMount() {
@@ -83,7 +81,6 @@ export default class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-    // console.log("Page Properties: ", pageProps);
 
     return (
       <ThemeProvider theme={baseTheme}>

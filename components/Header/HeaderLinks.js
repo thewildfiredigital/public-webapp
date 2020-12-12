@@ -102,7 +102,7 @@ export default function HeaderLinks(props) {
           <Button
             target="_blank"
             // className={classes.navLink}
-            color="rose"
+            color="primary"
             round
           >
               {/* <MoodIcon className={classes.icons} />  */}
